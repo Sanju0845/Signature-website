@@ -9,6 +9,13 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("0do9D1OWrVjFDPJNE"); // Add your EmailJS public key here
+        })();
+    </script>
+</head>
 </head>
 <body>
     <!-- Add this right after the <body> tag, before other content -->
@@ -329,14 +336,18 @@
         </section>
 
         <!-- 9. Contact Section -->
+        // ... existing code ...
         <section class="contact-section">
             <h2>Get In Touch With Us</h2>
             <div class="contact-content">
-                <form class="contact-form">
-                    <input type="text" placeholder="Name" class="form-input">
-                    <input type="email" placeholder="Email" class="form-input">
-                    <textarea placeholder="Message" class="form-input"></textarea>
-                    <button class="submit-btn">Send Message</button>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Name" class="form-input" id="name" required>
+                    <input type="email" placeholder="Email" class="form-input" id="email" required>
+                    <textarea placeholder="Message" class="form-input" id="message" required></textarea>
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="success-message">Message Sent!</span>
+                    </button>
                 </form>
             </div>
         </section>
@@ -433,20 +444,39 @@
                 sections[index].scrollIntoView({ behavior: 'smooth' });
             });
         });
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('.submit-btn');
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
 
-        <script>
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting normally
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const review = document.getElementById('review').value;
-
-    const mailtoLink = `mailto:sanjayanand0509@gmail.com?subject=Review from ${name}&body=Name: ${name}%0AEmail: ${email}%0AReview: ${review}`;
-    
-    window.location.href = mailtoLink;
-});
-</script>
+        emailjs.send(
+            "service_tvvi2s9",  // Replace with your EmailJS service ID
+            "template_iooc4kq", // Replace with your EmailJS template ID
+            {
+                from_name: name,
+                reply_to: email,
+                message: message,
+                to_email: "sanjayanand0509@gmail.com"
+            }
+        )
+        .then(function() {
+            // Success animation
+            submitBtn.classList.add('success');
+            
+            // Reset form after delay
+            setTimeout(() => {
+                document.getElementById('contactForm').reset();
+                submitBtn.classList.remove('success');
+            }, 3000);
+        }, function(error) {
+            console.log('Failed to send email:', error);
+            alert('Failed to send message. Please try again.');
+        });
+    });
     </script>
 </body>
 </html> 
