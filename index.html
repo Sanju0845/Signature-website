@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature - Interactive Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Add this right after the <body> tag, before other content -->
+    <div class="section-dots">
+        <div class="dot" data-section="1"></div>
+        <div class="dot" data-section="2"></div>
+        <div class="dot" data-section="3"></div>
+        <div class="dot" data-section="4"></div>
+        <div class="dot" data-section="5"></div>
+        <div class="dot" data-section="6"></div>
+        <div class="dot" data-section="7"></div>
+        <div class="dot" data-section="8"></div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="background-text">SANJU</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <nav>
+        <div class="menu-icon">☰</div>
+        <div class="nav-links">
+            <a href="#about" class="nav-item">ABOUT</a>
+            <a href="#help" class="nav-item">HELP</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. Hero Section (no number needed) -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="signature-text">Signature</h1>
+                <p class="subtitle">Developed by the Sanju, to contact can DM me on instagram @sanju_0845.</p>
+                <button class="signup-btn">EXPLORE NOW</button>
+            </div>
+            <div class="hero-model">
+                <model-viewer
+                    src="./assets/models/shirt1.glb"
+                    alt="3D shirt model"
+                    auto-rotate
+                    camera-controls
+                    shadow-intensity="1"
+                    exposure="1"
+                    class="hero-3d-model">
+                </model-viewer>
+            </div>
+        </section>
+
+        <!-- 2. Lookbook Section -->
+        <section class="lookbook-section">
+            <h2 class="section-title">Lookbook 2024</h2>
+            <div class="lookbook-grid">
+                <div class="lookbook-item large">
+                    <model-viewer
+                        src="./assets/models/shirt1.glb"
+                        alt="3D shirt model"
+                        auto-rotate
+                        camera-controls>
+                    </model-viewer>
+                    <div class="item-details">
+                        <h3>Spring Collection</h3>
+                        <p>Crafted from premium materials</p>
+                        <span class="price">$299</span>
+                    </div>
+                </div>
+                <div class="lookbook-text">
+                    <h3>Design Story</h3>
+                    <p>Inspired by contemporary architecture and minimalist design principles, our Spring 2024 collection embodies modern luxury with timeless appeal.</p>
+                    <ul class="design-features">
+                        <li>Premium Italian fabric</li>
+                        <li>Hand-finished details</li>
+                        <li>Custom hardware</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Showcase Section -->
+        <section class="showcase-section">
+            <div class="showcase-container">
+                <div class="showcase-model">
+                    <model-viewer
+                        src="./assets/models/shirt1.glb"
+                        alt="3D shirt model"
+                        auto-rotate
+                        camera-controls>
+                    </model-viewer>
+                </div>
+                <div class="showcase-info">
+                    <h2>Premium Design</h2>
+                    <div class="info-block">
+                        <h3>Materials</h3>
+                        <p>Premium Italian cotton with custom metal hardware</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Craftsmanship</h3>
+                        <p>Hand-stitched details with reinforced seams</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Exclusivity</h3>
+                        <p>Limited edition pieces, individually numbered</p>
+                    </div>
+                    <button class="explore-btn">Explore Details</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Specifications Section -->
+        <section class="specifications-section">
+            <div class="specs-container">
+                <div class="specs-content">
+                    <h2>Product Specifications</h2>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <h4>Materials</h4>
+                            <ul>
+                                <li>100% Premium Egyptian Cotton</li>
+                                <li>Custom Gold-Plated Hardware</li>
+                                <li>Double-Reinforced Stitching</li>
+                                <li>Anti-Fade Fabric Treatment</li>
+                            </ul>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Care Instructions</h4>
+                            <ul>
+                                <li>Professional Dry Clean Only</li>
+                                <li>Store in Provided Dust Bag</li>
+                                <li>Avoid Direct Sunlight</li>
+                                <li>Handle Hardware with Care</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="interactive-size-chart">
+                    <h3>Size Guide (Indian Measurements)</h3>
+                    <div class="size-table">
+                        <div class="size-row header">
+                            <span>Size</span>
+                            <span>Chest (cm)</span>
+                            <span>Waist (cm)</span>
+                            <span>Length (cm)</span>
+                        </div>
+                        <div class="size-row">
+                            <span>XS</span>
+                            <span>91-96</span>
+                            <span>76-81</span>
+                            <span>66-69</span>
+                        </div>
+                        <div class="size-row">
+                            <span>S</span>
+                            <span>96-101</span>
+                            <span>81-86</span>
+                            <span>69-71</span>
+                        </div>
+                        <div class="size-row">
+                            <span>M</span>
+                            <span>101-106</span>
+                            <span>86-91</span>
+                            <span>71-74</span>
+                        </div>
+                        <div class="size-row">
+                            <span>L</span>
+                            <span>106-111</span>
+                            <span>91-96</span>
+                            <span>74-76</span>
+                        </div>
+                        <div class="size-row">
+                            <span>XL</span>
+                            <span>111-116</span>
+                            <span>96-101</span>
+                            <span>76-79</span>
+                        </div>
+                        <div class="size-row">
+                            <span>XXL</span>
+                            <span>116-121</span>
+                            <span>101-106</span>
+                            <span>79-81</span>
+                        </div>
+                        <div class="size-row">
+                            <span>3XL</span>
+                            <span>121-126</span>
+                            <span>106-111</span>
+                            <span>81-84</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Material Showcase -->
+        <section class="material-showcase">
+            <h2>Premium Materials</h2>
+            <div class="material-grid">
+                <div class="material-card">
+                    <model-viewer
+                        src="./assets/models/shirt1.glb"
+                        alt="Premium Cotton"
+                        auto-rotate
+                        camera-controls>
+                    </model-viewer>
+                    <h4>Premium Cotton</h4>
+                    <p>Finest Egyptian cotton, carefully selected for ultimate comfort and durability.</p>
+                </div>
+                <div class="material-card">
+                    <model-viewer
+                        src="./assets/models/shirt1.glb"
+                        alt="Italian Fabric"
+                        auto-rotate
+                        camera-controls>
+                    </model-viewer>
+                    <h4>Italian Fabric</h4>
+                    <p>Luxurious Italian-made fabrics with exceptional texture and feel.</p>
+                </div>
+                <div class="material-card">
+                    <model-viewer
+                        src="./assets/models/shirt1.glb"
+                        alt="Custom Hardware"
+                        auto-rotate
+                        camera-controls>
+                    </model-viewer>
+                    <h4>Custom Hardware</h4>
+                    <p>Precision-engineered metal components for lasting quality.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Design Philosophy -->
+        <section class="design-philosophy">
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>01 / Design</h3>
+                    <p>Innovative designs that push boundaries while maintaining classic elegance. Each piece tells its own unique story.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>02 / Craft</h3>
+                    <p>Meticulously crafted by skilled artisans using traditional techniques combined with modern innovation.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>03 / Quality</h3>
+                    <p>Only the finest materials are selected, ensuring each piece meets our exceptional standards.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Collection Section -->
+        <section class="collection-section">
+            <h2 class="section-title">Premium Collections</h2>
+            <div class="collection-grid">
+                <div class="collection-info">
+                    <h2>Collection</h2>
+                    <p class="collection-desc">Explore our latest designs crafted with precision and style.</p>
+                    <ul class="features-list">
+                        <li>Premium Materials</li>
+                        <li>Handcrafted Excellence</li>
+                        <li>Limited Edition Series</li>
+                    </ul>
+                    <button class="gold-btn">View Collection</button>
+                </div>
+                <div class="collection-models">
+                    <div class="model-card">
+                        <model-viewer
+                            src="./assets/models/shirt1.glb"
+                            alt="Design 1"
+                            auto-rotate
+                            camera-controls>
+                        </model-viewer>
+                    </div>
+                    <div class="model-card">
+                        <model-viewer
+                            src="./assets/models/shirt1.glb"
+                            alt="Design 2"
+                            auto-rotate
+                            camera-controls>
+                        </model-viewer>
+                    </div>
+                    <div class="model-card">
+                        <model-viewer
+                            src="./assets/models/shirt1.glb"
+                            alt="Design 3"
+                            auto-rotate
+                            camera-controls>
+                        </model-viewer>
+                    </div>
+                    <div class="model-card">
+                        <model-viewer
+                            src="./assets/models/shirt1.glb"
+                            alt="Design 4"
+                            auto-rotate
+                            camera-controls>
+                        </model-viewer>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Testimonials -->
+        <section class="testimonials">
+            <h2>Client Experience</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Exceptional quality and attention to detail. A truly luxury experience."</p>
+                    <span class="client-name">— Sarah Johnson</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The craftsmanship is unparalleled. Each piece feels unique and special."</p>
+                    <span class="client-name">— Michael Chen</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Contact Section -->
+        <section class="contact-section">
+            <h2>Get In Touch With Us</h2>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <input type="text" placeholder="Name" class="form-input">
+                    <input type="email" placeholder="Email" class="form-input">
+                    <textarea placeholder="Message" class="form-input"></textarea>
+                    <button class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.1
+            });
+            gsap.to(follower, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.3
+            });
+        });
+
+        // Scroll progress
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrolled / total) * 100;
+            document.querySelector('.progress-bar').style.height = `${progress}%`;
+        });
+
+        // Scroll-triggered animations for sections
+        gsap.utils.toArray('section').forEach((section, i) => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 100,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "top 20%",
+                    scrub: 1
+                }
+            });
+        });
+
+        // Parallax effect for background numbers
+        gsap.utils.toArray('.background-number').forEach(number => {
+            gsap.to(number, {
+                y: -100,
+                scrollTrigger: {
+                    trigger: number,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1
+                }
+            });
+        });
+
+        // Dot navigation
+        const dots = document.querySelectorAll('.dot');
+        const sections = document.querySelectorAll('section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(sections).indexOf(entry.target);
+                    updateActiveDot(index);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        function updateActiveDot(index) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        // Optional: Add click navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                sections[index].scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html> 
