@@ -433,6 +433,20 @@
                 sections[index].scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+        <script>
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const review = document.getElementById('review').value;
+
+    const mailtoLink = `mailto:sanjayanand0509@gmail.com?subject=Review from ${name}&body=Name: ${name}%0AEmail: ${email}%0AReview: ${review}`;
+    
+    window.location.href = mailtoLink;
+});
+</script>
     </script>
 </body>
 </html> 
